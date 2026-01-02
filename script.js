@@ -58,28 +58,3 @@ sections.forEach(section => {
         }
     }
 });
-
-// Enable image zoom on mobile
-const images = document.querySelectorAll('.section-image');
-images.forEach(img => {
-    img.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            this.classList.toggle('zoomed');
-            if (this.classList.contains('zoomed')) {
-                // Enable pinch zoom
-                this.style.transform = 'scale(1)';
-            } else {
-                this.style.transform = 'scale(1)';
-            }
-        }
-    });
-});
-
-// Improved mouse wheel navigation - removed blocking for better scroll
-let wheelTimeout;
-document.addEventListener('wheel', (e) => {
-    clearTimeout(wheelTimeout);
-    wheelTimeout = setTimeout(() => {
-        // Allow normal scrolling behavior
-    }, 100);
-}, { passive: true });
